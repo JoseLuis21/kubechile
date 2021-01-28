@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #AUTHENTICARSE CON AWSCLI
-aws configure --profile test < config.csv
+aws configure import --csv file://config.csv
+aws configure set region us-east-1 --profile default
 
 #AUTENTIFICARSE CON AWS ECR
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 769658871215.dkr.ecr.us-east-1.amazonaws.com
