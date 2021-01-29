@@ -1,0 +1,59 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: image-pv
+  labels:
+    backpvc: ready
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/app/app/uploads/avatars"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: image-pvc
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+  selector: 
+    matchLabels: 
+      backpvc: ready
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: banner-pv
+  labels:
+    backbpvc: ready
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/app/app/uploads/banners"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: banner-pvc
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+  selector: 
+    matchLabels: 
+      backbpvc: ready

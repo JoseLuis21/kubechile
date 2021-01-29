@@ -24,3 +24,9 @@ docker tag reactapp:latest 769658871215.dkr.ecr.us-east-1.amazonaws.com/reactapp
 
 #PUSH DE LA IMAGEN BACKEND
 docker push 769658871215.dkr.ecr.us-east-1.amazonaws.com/reactapp:latest
+
+#CREAR CLUSTER EN EKS
+eksctl create cluster  --name kubechile  --with-oidc  --without-nodegroup
+
+#CREAR NODOS
+eksctl create nodegroup  --cluster kubechile  --name kubenode  --node-type t2.small --node-ami auto --nodes 1  --nodes-min 1  --nodes-max 1 --asg-access

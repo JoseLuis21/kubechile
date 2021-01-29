@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-backed
+  labels:
+    app: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: golangapp
+        image: 769658871215.dkr.ecr.us-east-1.amazonaws.com/golangapp:latest
+        env:
+        - name: HOST_MONGODB
+          value: "cluster0.3z2vf.mongodb.net/twittor?retryWrites=true&w=majority"
+        - name: USER_MONGODB
+          value: "mongo"
+        volumeMounts:
+        - name: voldb
+          mountPath: "/opt"
+          readOnly: true
+      volumes:
+      - name: voldb
+        secret:
+          secretName: secretmdb
+      - name: image-upload
+        persistentVolumeClaim:
+          claimName: image-pvc
+      - name: banner-upload
+        persistentVolumeClaim:
+          claimName: banner-pvc
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-front
+  labels:
+    app: front
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: front
+  template:
+    metadata:
+      labels:
+        app: front
+    spec:
+      containers:
+      - name: reactapp
+        image: 769658871215.dkr.ecr.us-east-1.amazonaws.com/reactapp:latest
