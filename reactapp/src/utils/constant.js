@@ -1,2 +1,2 @@
-export const API_HOST = "http://localhost:9090";
+export const API_HOST = "/api";
 export const TOKEN = "token";
