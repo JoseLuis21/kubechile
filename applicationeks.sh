@@ -31,7 +31,7 @@ eksctl create cluster  --name kubechile  --with-oidc  --without-nodegroup --regi
 #CREAR NODOS
 eksctl create nodegroup  --cluster kubechile  --name kubenode  --node-type t2.small --node-ami auto --nodes 1  --nodes-min 1  --nodes-max 1 --asg-access
 
-#APROVICIONAR INGRES CONTROLLER LBA LOAD BALANCER APLICATION
+#APROVICIONAR INGRESS CONTROLLER LBA LOAD BALANCER APPLICATION
 eksctl utils associate-iam-oidc-provider --region us-east-1 --cluster=kubechile --approve
 aws iam create-policy --policy-name ALBIngressControllerIAMPolicy --policy-document file://iam-policy.json
 kubectl apply -f rbac-role.yaml
@@ -44,3 +44,6 @@ kubectl apply -f pvc_upload.yml
 kubectl apply -f services.yml
 kubectl apply -f ingress.yml
 kubectl apply -f deployment.yml
+
+#COMANDO PARA MOSTRAR LA DIRECCION DEL INGRESS LOADBALANCER
+kubectl get ingress
