@@ -1,6 +1,6 @@
 ## PROYECTO FINAL DOCKER
 
-##PASOS PARA EJECUTAR EL SISTEMA
+## PASOS PARA EJECUTAR EL SISTEMA
 
 - Tener Instalado AWS CLI V2 (La mas reciente)
 	-	 [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
@@ -10,9 +10,9 @@
 	-	 [KUBECTL](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
 - EJECUTAR EN LA SHELL EL ARCHIVO applicationeks.sh
 
-####COMANDO
+- COMANDO
 
-`$ . applicationeks.sh`
+` $ . applicationeks.sh `
 
 - PEGAR EL ARCHIVO CONFIG.CSV ENVIADO AL EMAIL EN LA RAIZ DEL PROYECTO AL MISMO NIVEL DEL README O ARCHIVOS KUBERNETES
 - UNA VEZ TERMINADO DE EJECUTAR QUEDARA EN LA CONSOLA EL LINK DE ACCESO A LA APP CON TODO LO SOLICITADO EN LA RUBRICA
@@ -61,4 +61,4 @@
 ![](https://i.blogs.es/a49483/logo-mongodb-tagline-2/1366_2000.png)
 
 
-#####DESARROLLADO POR JOSÉ MANCILLA & DIEGO CORONADO 2020
+#### DESARROLLADO POR JOSÉ MANCILLA & DIEGO CORONADO 2020
