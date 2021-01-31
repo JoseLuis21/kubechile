@@ -1,5 +1,7 @@
 ## PROYECTO FINAL DOCKER
 
+![](https://www.trecebits.com/wp-content/uploads/2020/06/Recomendaciones-de-listas-Twitter.jpg)
+
 ## PASOS PARA EJECUTAR EL SISTEMA
 
 - Tener Instalado AWS CLI V2 (La mas reciente)
