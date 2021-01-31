@@ -9,6 +9,7 @@
 - Tener Instalado KUBECTL
 	-	 [KUBECTL](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
 - EJECUTAR EN LA SHELL EL ARCHIVO applicationeks.sh
+
 ####COMANDO
 `$ . applicationeks.sh`
 
